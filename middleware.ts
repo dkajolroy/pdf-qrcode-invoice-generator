@@ -5,7 +5,7 @@ export default withAuth(
     // callback permission to working
     const { pathname, origin } = req.nextUrl;
     const { token } = req.nextauth;
-    if (token && pathname === "auth") {
+    if (token && pathname === "/auth") {
       return NextResponse.redirect(origin);
     }
   },

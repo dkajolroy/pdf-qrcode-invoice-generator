@@ -26,7 +26,7 @@ function Auth({ searchParams }: Props) {
   return (
     <div className="h-screen bg-slate-200">
       <div className="container h-full flex justify-center items-center">
-        <div className="flex flex-col gap-2 lg:w-1/4 bg-white p-5 rounded">
+        <div className="flex flex-col gap-2  bg-white p-5 rounded">
           <h2>Login please</h2>
           <input
             onKeyUp={(e) => {
@@ -39,7 +39,7 @@ function Auth({ searchParams }: Props) {
             }
             type="text"
             placeholder="Username"
-            className="outline-none focus:bg-slate-100 border rounded px-2 py-1"
+            className="outline-none text-sm focus:bg-slate-100 transition border-slate-300 border focus:border-slate-400 rounded px-2 py-1"
           />
           <input
             onKeyUp={(e) => {
@@ -52,11 +52,11 @@ function Auth({ searchParams }: Props) {
             }
             type="text"
             placeholder="Password"
-            className="outline-none focus:bg-slate-100 border rounded px-2 py-1"
+            className="outline-none text-sm focus:bg-slate-100 transition border-slate-300 border focus:border-slate-400 rounded px-2 py-1"
           />
           <button
             onClick={submit}
-            className="focus:outline-none hover:bg-teal-600 transition text-white py-1 bg-teal-500 rounded "
+            className="focus:outline-none text-sm hover:bg-teal-600 transition text-white py-[6px] bg-teal-500 rounded "
           >
             Sign In
           </button>

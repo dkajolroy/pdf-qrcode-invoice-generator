@@ -1,12 +1,11 @@
-"use client";
 import PrintDocument from "@/components/PrintDocument";
 
-function Home() {
+function ViewDoc() {
   return (
-    <div>
+    <div className="my-5">
       <PrintDocument />
     </div>
   );
 }
 
-export default Home;
+export default ViewDoc;

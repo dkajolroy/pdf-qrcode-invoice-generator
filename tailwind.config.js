@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       container: {
         padding: 10,
+        center: true,
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

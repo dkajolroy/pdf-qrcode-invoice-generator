@@ -99,7 +99,11 @@ function PrintDocument() {
           </table>
         </div>
       </div>
-      <button onClick={downloadPdf}>Download</button>
+      <div className="flex justify-center my-4">
+        <button onClick={downloadPdf} className="bg-orange-600  text-white p-2">
+          Download
+        </button>
+      </div>
     </>
   );
 }
