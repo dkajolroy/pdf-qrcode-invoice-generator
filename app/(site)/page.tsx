@@ -61,6 +61,7 @@ function Home() {
       <div className="grid grid-cols-2 gap-2 my-2">
         <input
           type="text"
+          value={inputData.name}
           onChange={(e) =>
             setInputData((s) => ({ ...s, name: e.target.value }))
           }
@@ -68,6 +69,7 @@ function Home() {
           className="border outline-none focus:border-gray-400 focus:bg-gray-100 py-1  px-2"
         />
         <input
+          value={inputData.email}
           onChange={(e) =>
             setInputData((s) => ({ ...s, email: e.target.value }))
           }
@@ -76,6 +78,7 @@ function Home() {
           className="border outline-none focus:border-gray-400 focus:bg-gray-100 py-1  px-2"
         />
         <input
+          value={inputData.phone}
           onChange={(e) =>
             setInputData((s) => ({ ...s, phone: e.target.value }))
           }
@@ -84,6 +87,7 @@ function Home() {
           className="border outline-none focus:border-gray-400 focus:bg-gray-100 py-1  px-2"
         />
         <input
+          value={inputData.city}
           onChange={(e) =>
             setInputData((s) => ({ ...s, city: e.target.value }))
           }
@@ -94,6 +98,7 @@ function Home() {
       </div>
       <div className="flex flex-col gap-2">
         <input
+          value={inputData.address}
           onChange={(e) =>
             setInputData((s) => ({ ...s, address: e.target.value }))
           }
