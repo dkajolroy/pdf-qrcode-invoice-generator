@@ -24,7 +24,7 @@ function Navigation() {
     Document[] | undefined,
     boolean,
     string | undefined
-  >("/api/document", fetcher);
+  >("/api/document?search=", fetcher);
   const pathname = usePathname();
 
   return (
