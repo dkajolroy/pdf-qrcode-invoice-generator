@@ -1,16 +1,18 @@
 "use client";
 import { Icon124Spinner2 } from "@/components/IconFile";
 import Document from "@/components/document";
+import { useState } from "react";
 import useSWR from "swr";
 
 const fetcher = (query: string) => fetch(query).then((res) => res.json());
 
 function DocumentPage() {
+  const [search, setSearch] = useState("");
   const { data, error, isLoading } = useSWR<
     Document[] | undefined,
     boolean,
     string | undefined
-  >("/api/document", fetcher);
+  >(`/api/document?search=${search.trim()}`, fetcher);
 
   return (
     <div className="container">
@@ -19,6 +21,7 @@ function DocumentPage() {
         <div className="flex border rounded  border-zinc-500  items-center">
           <input
             type="search"
+            onChange={(e) => setSearch(e.target.value)}
             placeholder="Type text..."
             className="border-none outline-none focus:border-gray-300 focus:bg-gray-100 py-1 rounded px-2"
           />
@@ -36,7 +39,7 @@ function DocumentPage() {
         </div>
       )}
       <div className="grid lg:grid-cols-2 gap-5 my-5 items-center">
-        {!error
+        {!error && data?.length
           ? data?.map((item, i) => <Document item={item} key={i} />)
           : null}
       </div>

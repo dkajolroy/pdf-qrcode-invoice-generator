@@ -1,8 +1,11 @@
 import { prisma } from "@/lib/prisma";
 import { NextRequest, NextResponse } from "next/server";
 export async function GET(req: NextRequest) {
+  const searchQuery = req.nextUrl.searchParams.get("search");
   try {
-    const document = await prisma.document.findMany();
+    const document = await prisma.document.findMany({
+      where: { name: { contains: searchQuery as string, mode: "insensitive" } },
+    });
     return NextResponse.json(document);
   } catch (error) {
     return NextResponse.json({ message: "Something went wrong !" });
