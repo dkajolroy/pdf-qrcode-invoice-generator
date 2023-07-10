@@ -11,6 +11,7 @@ import DocHeader from "./document/docHeader";
 
 function PrintDocument({ document_id }: { document_id: string }) {
   const ref = useRef(null);
+
   const { data, error, isLoading } = useSWR<
     Document | undefined,
     boolean,
@@ -34,6 +35,7 @@ function PrintDocument({ document_id }: { document_id: string }) {
       </div>
     );
   }
+  // submit form
   function downloadPdf() {
     const input = ref.current;
     if (input) {
