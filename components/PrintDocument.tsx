@@ -131,7 +131,7 @@ function PrintDocument({ document_id }: { document_id: string }) {
                         <td className="px-6 py-4 text-sm text-gray-500">1</td>
                         <td className="px-6 py-4">
                           <div className="text-sm text-gray-900">
-                            Amazon Brand - Symactive Men's Regular Fit T-Shirt
+                            Amazon Brand - Symactive Mens Regular Fit T-Shirt
                           </div>
                         </td>
                         <td className="px-6 py-4">
@@ -144,7 +144,7 @@ function PrintDocument({ document_id }: { document_id: string }) {
                         <td className="px-6 py-4 text-sm text-gray-500">2</td>
                         <td className="px-6 py-4">
                           <div className="text-sm text-gray-900">
-                            Amazon Brand - Symactive Men's Regular Fit T-Shirt
+                            Amazon Brand - Symactive Mens Regular Fit T-Shirt
                           </div>
                         </td>
                         <td className="px-6 py-4">
@@ -157,7 +157,7 @@ function PrintDocument({ document_id }: { document_id: string }) {
                         <td className="px-6 py-4 text-sm text-gray-500">3</td>
                         <td className="px-6 py-4">
                           <div className="text-sm text-gray-900">
-                            Amazon Brand - Symactive Men's Regular Fit T-Shirt
+                            Amazon Brand - Symactive Mens Regular Fit T-Shirt
                           </div>
                         </td>
                         <td className="px-6 py-4">
