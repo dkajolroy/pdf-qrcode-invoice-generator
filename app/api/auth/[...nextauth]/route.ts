@@ -1,3 +1,5 @@
+import { prisma } from "@/lib/prisma";
+import bcrypt from "bcrypt";
 import NextAuth from "next-auth/next";
 import CredentialProvider from "next-auth/providers/credentials";
 const handler = NextAuth({
@@ -12,9 +14,22 @@ const handler = NextAuth({
         if (!credentials?.password || !credentials?.username) {
           return null;
         }
-
-        const user = { id: "333", name: "kkk" };
-        return user;
+        const findUser = await prisma.user.findFirst({
+          where: {
+            OR: [
+              { username: credentials.username },
+              { email: credentials.username },
+            ],
+          },
+        });
+        if (
+          findUser &&
+          (await bcrypt.compare(credentials.password, findUser.password))
+        ) {
+          const { created_at, updated_at, password, ...other } = findUser;
+          return other;
+        }
+        return null;
       },
     }),
   ],
@@ -23,6 +38,22 @@ const handler = NextAuth({
   },
   pages: {
     signIn: "/auth",
+  },
+  callbacks: {
+    jwt({ token, user }) {
+      if (user) {
+        token.id = user.id;
+        token.username = user.username;
+      }
+      return token;
+    },
+    session({ token, session }) {
+      if (session.user) {
+        session.user.id = token.id;
+        session.user.username = token.username;
+      }
+      return session;
+    },
   },
 });
 
